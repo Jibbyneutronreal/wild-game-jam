@@ -4,7 +4,6 @@ var tower_block = preload("res://Block.tscn")
 var last_block_y = 680  # Tracks the y position of the last spawned block
 var block_gap = 125
 var grav = 10
-@onready var camera = %Camera2D
 var numberBlocks = 5
 
 func _ready():
@@ -28,9 +27,4 @@ func _process(_delta):
 		numberBlocks = 0
 
 	if Input.is_action_just_pressed("spawnBlock"):
-		print("spawned block")
 		blockinstance()
-
-
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	camera.position.y = 350
