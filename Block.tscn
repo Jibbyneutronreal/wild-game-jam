@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://0nm066wac1m4"]
+[gd_scene load_steps=6 format=3 uid="uid://0nm066wac1m4"]
 
 [ext_resource type="Script" uid="uid://1xet76886mnb" path="res://TowerBlockInstance.gd" id="1_ab6iy"]
 [ext_resource type="Texture2D" uid="uid://cpkiihtxdi1w4" path="res://icon.svg" id="2_rkki4"]
+[ext_resource type="Script" uid="uid://dc4v3pqeaxk4m" path="res://mouse_detector.gd" id="3_rkki4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab6iy"]
 size = Vector2(128, 126)
@@ -17,6 +18,7 @@ position = Vector2(-1, 1)
 texture = ExtResource("2_rkki4")
 
 [node name="MouseDetector" type="Area2D" parent="."]
+script = ExtResource("3_rkki4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetector"]
 position = Vector2(-1, 1)
@@ -25,3 +27,6 @@ shape = SubResource("RectangleShape2D_ab6iy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_tr34o")
+
+[connection signal="mouse_entered" from="MouseDetector" to="MouseDetector" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MouseDetector" to="MouseDetector" method="_on_mouse_exited"]
