@@ -97,6 +97,5 @@ tile_map_data = PackedByteArray("AAD//wAAAAABAAEAAAAGAAAAAAABAAEAAAAFAAAAAAABAAE
 tile_set = SubResource("TileSet_r0du0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-unique_name_in_owner = true
 position = Vector2(568, 320)
 script = ExtResource("3_r0du0")
