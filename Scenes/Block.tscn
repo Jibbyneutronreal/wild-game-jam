@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://0nm066wac1m4"]
 
 [ext_resource type="Script" uid="uid://1xet76886mnb" path="res://Scripts/TowerBlockInstance.gd" id="1_ujcp4"]
-[ext_resource type="Texture2D" uid="uid://cpkiihtxdi1w4" path="res://Assets/icon.svg" id="2_rjsgv"]
+[ext_resource type="Texture2D" uid="uid://sra0xn1xbl8l" path="res://Assets/Screenshot 2025-03-15 155808.png" id="2_ujcp4"]
 [ext_resource type="Script" uid="uid://dc4v3pqeaxk4m" path="res://Scripts/mouse_detector.gd" id="3_kcwjl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab6iy"]
@@ -14,8 +14,9 @@ size = Vector2(128.5, 128)
 script = ExtResource("1_ujcp4")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-1, 1)
-texture = ExtResource("2_rjsgv")
+position = Vector2(-0.188623, 1.5)
+scale = Vector2(0.382075, 0.38024)
+texture = ExtResource("2_ujcp4")
 
 [node name="MouseDetector" type="Area2D" parent="."]
 script = ExtResource("3_kcwjl")
