@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo2duiqjuith7"]
+
+[ext_resource type="Texture2D" uid="uid://bjajx6sojtmp4" path="res://GreenGodot.png" id="1_e1pwd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgecv"]
+size = Vector2(128, 128)
+
+[node name="StickyBlock" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(107, 67)
+shape = SubResource("RectangleShape2D_jgecv")
+
+[node name="MouseDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetector"]
+position = Vector2(107, 67)
+shape = SubResource("RectangleShape2D_jgecv")
+
+[node name="GreenGodot" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(107.25, 66.75)
+scale = Vector2(0.571111, 0.566667)
+texture = ExtResource("1_e1pwd")

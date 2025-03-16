@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://xrwdk06nxo0d"]
+[gd_scene load_steps=4 format=3 uid="uid://xrwdk06nxo0d"]
 
 [ext_resource type="Texture2D" uid="uid://cpkiihtxdi1w4" path="res://icon.svg" id="1_xxgf6"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xxgf6"]
+rough = true
+absorbent = true
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4f30"]
-size = Vector2(1324, 24)
+size = Vector2(1324, 31)
 
 [node name="StaticBody2D" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_xxgf6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(599, 0.5)
@@ -13,5 +18,5 @@ scale = Vector2(10.3281, 0.242188)
 texture = ExtResource("1_xxgf6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(596, 2)
+position = Vector2(596, 0.5)
 shape = SubResource("RectangleShape2D_y4f30")

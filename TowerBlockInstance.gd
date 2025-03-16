@@ -1,9 +1,9 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 var tower_block = preload("res://Block.tscn")
 var last_block_y = 680  # Tracks the y position of the last spawned block
 var block_gap = 125
-var grav = 500
+var grav = 200
 var numberBlocks = 5
 
 
@@ -25,4 +25,3 @@ func _process(_delta):
 		
 func _physics_process(delta):
 	position.y += grav*delta
-	move_and_slide()
