@@ -27,6 +27,11 @@ folder_colors={
 "res://Scripts/": "purple"
 }
 
+[global_group]
+
+blocks=""
+Sticked=""
+
 [input]
 
 LeftClick={
@@ -78,7 +83,7 @@ D={
 [physics]
 
 2d/run_on_separate_thread=true
-common/physics_ticks_per_second=100
+common/physics_ticks_per_second=150
 common/physics_jitter_fix=2.0
 2d/default_linear_damp=6.0
 2d/default_angular_damp=6.0
