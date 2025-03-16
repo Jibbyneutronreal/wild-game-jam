@@ -13,11 +13,19 @@ config_version=5
 config/name="Wild Game Jam"
 run/main_scene="uid://bjm6nq5bvvljv"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.svg"
 
 [autoload]
 
-g="*res://Global.gd"
+g="*res://Scripts/Global.gd"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Scenes/": "blue",
+"res://Scripts/": "purple"
+}
 
 [input]
 
@@ -70,7 +78,7 @@ D={
 [physics]
 
 2d/run_on_separate_thread=true
-common/physics_ticks_per_second=150
+common/physics_ticks_per_second=100
 common/physics_jitter_fix=2.0
 2d/default_linear_damp=6.0
 2d/default_angular_damp=6.0

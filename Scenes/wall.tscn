@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://xrwdk06nxo0d"]
 
-[ext_resource type="Texture2D" uid="uid://cpkiihtxdi1w4" path="res://icon.svg" id="1_xxgf6"]
+[ext_resource type="Texture2D" uid="uid://cpkiihtxdi1w4" path="res://Assets/icon.svg" id="1_xxgf6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xxgf6"]
 rough = true

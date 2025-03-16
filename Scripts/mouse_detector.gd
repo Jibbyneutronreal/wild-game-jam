@@ -17,9 +17,7 @@ func _input(event):
 		dragging = false
 
 func _on_mouse_entered():
-	print("Mouse entered block")
 	clickable = true
 
 func _on_mouse_exited():
-	print("Mouse exited block")
 	clickable = false

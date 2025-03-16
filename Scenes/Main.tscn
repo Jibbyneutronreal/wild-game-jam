@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgojsisc7o4ml"]
+
+[ext_resource type="Script" uid="uid://doogj2pukfuwa" path="res://Scripts/main.gd" id="1_v1gob"]
+[ext_resource type="Script" uid="uid://bmo7bd8rgi47e" path="res://Scripts/camera_2d.gd" id="3_50glp"]
+[ext_resource type="PackedScene" uid="uid://xrwdk06nxo0d" path="res://Scenes/wall.tscn" id="4_vy5pj"]
+
+[node name="Main Scene" type="Node2D"]
+script = ExtResource("1_v1gob")
+
+[node name="map" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(568, 320)
+script = ExtResource("3_50glp")
+
+[node name="smoothcam" type="Timer" parent="Camera2D"]
+wait_time = 0.2
+
+[node name="blockcd" type="Timer" parent="Camera2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_vy5pj")]
+position = Vector2(-45, 650)
+
+[connection signal="timeout" from="Camera2D/smoothcam" to="Camera2D" method="_on_smoothcam_timeout"]
+[connection signal="timeout" from="Camera2D/blockcd" to="Camera2D" method="_on_blockcd_timeout"]

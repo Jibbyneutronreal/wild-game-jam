@@ -1,9 +1,9 @@
 extends RigidBody2D
 
-var tower_block = preload("res://Block.tscn")
+var tower_block = preload("res://Scenes/Block.tscn")
 var last_block_y = 680  # Tracks the y position of the last spawned block
 var block_gap = 125
-var grav = 200
+var grav = 300
 var numberBlocks = 5
 
 

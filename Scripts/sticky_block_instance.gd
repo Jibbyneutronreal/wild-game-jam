@@ -1,9 +1,9 @@
 extends RigidBody2D
 
-var sticky_block = preload("res://sticky_block.tscn")
+var sticky_block = preload("res://Scenes/sticky_block.tscn")
 var last_block_y = 680  # Tracks the y position of the last spawned block
 var block_gap = 125
-var grav = 200
+var grav = 300
 var numberBlocks = 5
 
 
