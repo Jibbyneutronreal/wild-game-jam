@@ -31,14 +31,14 @@ position = Vector2(107.25, 66.75)
 scale = Vector2(0.571111, 0.566667)
 texture = ExtResource("1_e1pwd")
 
-[node name="sticky" type="Area2D" parent="."]
+[node name="sticky_detection" type="Area2D" parent="."]
 script = ExtResource("4_xrn3a")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sticky"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sticky_detection"]
 position = Vector2(105, 67)
 shape = SubResource("RectangleShape2D_sybj3")
 
 [connection signal="mouse_entered" from="MouseDetector" to="MouseDetector" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MouseDetector" to="MouseDetector" method="_on_mouse_exited"]
-[connection signal="area_entered" from="sticky" to="sticky" method="_on_area_entered"]
-[connection signal="body_entered" from="sticky" to="sticky" method="_on_body_entered"]
+[connection signal="area_entered" from="sticky_detection" to="sticky_detection" method="_on_area_entered"]
+[connection signal="body_entered" from="sticky_detection" to="sticky_detection" method="_on_body_entered"]
