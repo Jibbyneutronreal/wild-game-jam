@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgojsisc7o4ml"]
+[gd_scene load_steps=7 format=3 uid="uid://cgojsisc7o4ml"]
 
 [ext_resource type="Script" uid="uid://doogj2pukfuwa" path="res://Scripts/main.gd" id="1_v1gob"]
 [ext_resource type="PackedScene" uid="uid://0nm066wac1m4" path="res://Scenes/Block.tscn" id="2_pbw6q"]
 [ext_resource type="Script" uid="uid://bmo7bd8rgi47e" path="res://Scripts/camera_2d.gd" id="3_50glp"]
 [ext_resource type="PackedScene" uid="uid://xrwdk06nxo0d" path="res://Scenes/wall.tscn" id="4_vy5pj"]
+[ext_resource type="PackedScene" uid="uid://bo2duiqjuith7" path="res://Scenes/sticky_block.tscn" id="5_v1gob"]
 [ext_resource type="PackedScene" uid="uid://uebd1t3fbc4o" path="res://Scenes/Slippery_block.tscn" id="6_v1gob"]
 
 [node name="Main Scene" type="Node2D"]
@@ -29,7 +30,10 @@ wait_time = 0.2
 position = Vector2(-45, 650)
 
 [node name="SlipperyBlock" parent="." instance=ExtResource("6_v1gob")]
-position = Vector2(570, 1249)
+position = Vector2(662, 1424)
+
+[node name="StickyBlock" parent="." instance=ExtResource("5_v1gob")]
+position = Vector2(-5, 1443)
 
 [connection signal="timeout" from="Camera2D/smoothcam" to="Camera2D" method="_on_smoothcam_timeout"]
 [connection signal="timeout" from="Camera2D/blockcd" to="Camera2D" method="_on_blockcd_timeout"]

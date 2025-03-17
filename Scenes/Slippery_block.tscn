@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://uebd1t3fbc4o"]
 
 [ext_resource type="Texture2D" uid="uid://cdlxgdi6sre7x" path="res://Assets/bluesquare.png" id="1_ap2dk"]
-[ext_resource type="Script" uid="uid://cacabs2vfv2ok" path="res://Scenes/slippery_block.gd" id="1_ty11x"]
-[ext_resource type="Script" uid="uid://cnv8fioillexo" path="res://Scenes/mouse_detector_slippery.gd" id="2_235df"]
+[ext_resource type="Script" uid="uid://cacabs2vfv2ok" path="res://Scripts/slippery_block.gd" id="1_ty11x"]
+[ext_resource type="Script" uid="uid://cnv8fioillexo" path="res://Scripts/mouse_detector_slippery.gd" id="2_235df"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awlhx"]
 size = Vector2(128, 130)

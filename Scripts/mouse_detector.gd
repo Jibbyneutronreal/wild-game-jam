@@ -26,7 +26,7 @@ func _physics_process(delta):
 		# tower_block.global_position = target_pos
 
 func _input(event):
-	if Input.is_action_just_pressed("holdItem") and clickable:
+	if Input.is_action_pressed("holdItem") and clickable:
 		dragging = true
 		# Store offset from mouse to block center to maintain grab point
 		drag_offset = tower_block.global_position - get_global_mouse_position()
