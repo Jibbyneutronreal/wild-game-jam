@@ -6,7 +6,6 @@ var block_gap = 125
 var grav = 300
 var numberBlocks = 5
 var is_stuck = false
-var stick_to_body = null
 
 func _ready():
 	# These properties are valid for RigidBody2D

@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo2duiqjuith7"]
+[gd_scene load_steps=8 format=3 uid="uid://bo2duiqjuith7"]
 
 [ext_resource type="Texture2D" uid="uid://bjajx6sojtmp4" path="res://Assets/GreenGodot.png" id="1_e1pwd"]
 [ext_resource type="Script" uid="uid://1xet76886mnb" path="res://Scripts/TowerBlockInstance.gd" id="1_uc33n"]
 [ext_resource type="Script" uid="uid://dku6tiubb0hit" path="res://Scripts/mouse_detector_sticky.gd" id="2_uc33n"]
 [ext_resource type="Script" uid="uid://d0uruospmp2wt" path="res://Scripts/sticky.gd" id="4_xrn3a"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xrn3a"]
+friction = 999.0
+rough = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgecv"]
 size = Vector2(128, 128)
@@ -12,6 +16,8 @@ size = Vector2(128, 128)
 size = Vector2(134, 132)
 
 [node name="StickyBlock" type="RigidBody2D"]
+mass = 1000.0
+physics_material_override = SubResource("PhysicsMaterial_xrn3a")
 script = ExtResource("1_uc33n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

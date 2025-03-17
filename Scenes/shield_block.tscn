@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://h5gbo8gserqh"]
 
-[ext_resource type="Script" uid="uid://c31o1u2h7divp" path="res://Scenes/shield_block.gd" id="1_rh6uw"]
-[ext_resource type="Script" uid="uid://cl7p3ss2ydp12" path="res://Scenes/shield_mouse_detect.gd" id="1_y1rsv"]
+[ext_resource type="Script" uid="uid://c31o1u2h7divp" path="res://Scripts/shield_block.gd" id="1_rh6uw"]
+[ext_resource type="Script" uid="uid://cl7p3ss2ydp12" path="res://Scripts/shield_mouse_detect.gd" id="1_y1rsv"]
 [ext_resource type="Texture2D" uid="uid://cpkiihtxdi1w4" path="res://Assets/icon.svg" id="2_rh6uw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f05rc"]
@@ -36,5 +36,7 @@ texture = ExtResource("2_rh6uw")
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_rh6uw")
 
+[connection signal="mouse_entered" from="ShieldMouseDetect" to="ShieldMouseDetect" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ShieldMouseDetect" to="ShieldMouseDetect" method="_on_mouse_exited"]
 [connection signal="area_entered" from="shield_killer" to="." method="_on_shield_killer_area_entered"]
 [connection signal="body_entered" from="shield_killer" to="." method="_on_shield_killer_body_entered"]

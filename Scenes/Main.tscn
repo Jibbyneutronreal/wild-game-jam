@@ -37,7 +37,7 @@ position = Vector2(662, 1424)
 position = Vector2(-5, 1443)
 
 [node name="gamet" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 4096.0
 autostart = true
 
 [node name="text" type="Control" parent="."]

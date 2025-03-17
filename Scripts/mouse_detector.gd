@@ -1,47 +1,22 @@
 extends Area2D
+
 var dragging = false
-@onready var tower_block = $".."
 var clickable = false
 var drag_offset = Vector2.ZERO
-
-func _ready():
-	# Ensure we're tracking the initial state
-	pass
+@onready var tower_block = $".."
 
 func _physics_process(delta):
 	if dragging:
-		# When dragging, set the velocity directly instead of position
-		var target_pos = get_global_mouse_position() + drag_offset
-		var current_pos = tower_block.global_position
-		
-		# Option 1: For more stable physics when interacting with sticky blocks
-		tower_block.linear_velocity = (target_pos - current_pos) / delta
-		tower_block.sleeping = false  # Wake up the physics body
-		
-		# Option 2: For direct positioning (may still cause some shaking with joints)
-		# tower_block.global_position = target_pos
-		
-		# Option 3: Turn off physics while dragging
-		# tower_block.freeze = true
-		# tower_block.global_position = target_pos
+		# Smoothly update the block's position while dragging
+		tower_block.global_position = get_global_mouse_position() + drag_offset
 
 func _input(event):
-	if Input.is_action_pressed("holdItem") and clickable:
+	if event.is_action_pressed("holdItem") and clickable:
 		dragging = true
-		# Store offset from mouse to block center to maintain grab point
+		# Calculate offset to maintain accurate drag position
 		drag_offset = tower_block.global_position - get_global_mouse_position()
-		
-		# If using Option 3, enable this:
-		# tower_block.freeze = true
-		
-	elif Input.is_action_just_released("holdItem"):
+	elif event.is_action_released("holdItem"):
 		dragging = false
-		
-		# If using Option 3, enable this:
-		# tower_block.freeze = false
-		
-		# When releasing, give a slight velocity in the direction of movement
-		# tower_block.linear_velocity = (get_global_mouse_position() - tower_block.global_position) * 2
 
 func _on_mouse_entered():
 	clickable = true

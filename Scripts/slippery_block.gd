@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var tower_block = preload("res://Scenes/Slippery_block.tscn")
+var slippery_block = preload("res://Scenes/Slippery_block.tscn")
 var last_block_y = 680
 var block_gap = 125
 var grav = 300
@@ -15,7 +15,7 @@ func _ready():
 
 func blockinstance():
 	if numberBlocks > 0:
-		var tower_block_instance = tower_block.instantiate()  
+		var tower_block_instance = slippery_block.instantiate()  
 		get_tree().root.add_child(tower_block_instance)
 		tower_block_instance.global_position = Vector2(global_position.x, last_block_y - block_gap)
 		last_block_y -= block_gap
