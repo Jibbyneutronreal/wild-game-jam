@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgojsisc7o4ml"]
+[gd_scene load_steps=8 format=3 uid="uid://cgojsisc7o4ml"]
 
 [ext_resource type="Script" uid="uid://doogj2pukfuwa" path="res://Scripts/main.gd" id="1_v1gob"]
 [ext_resource type="PackedScene" uid="uid://0nm066wac1m4" path="res://Scenes/Block.tscn" id="2_pbw6q"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://xrwdk06nxo0d" path="res://Scenes/wall.tscn" id="4_vy5pj"]
 [ext_resource type="PackedScene" uid="uid://bo2duiqjuith7" path="res://Scenes/sticky_block.tscn" id="5_v1gob"]
 [ext_resource type="PackedScene" uid="uid://uebd1t3fbc4o" path="res://Scenes/Slippery_block.tscn" id="6_v1gob"]
+[ext_resource type="PackedScene" uid="uid://h5gbo8gserqh" path="res://Scenes/shield_block.tscn" id="7_jw32o"]
 
 [node name="Main Scene" type="Node2D"]
 script = ExtResource("1_v1gob")
@@ -18,7 +19,7 @@ position = Vector2(422, 1508)
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(568, 320)
-zoom = Vector2(0.1, 0.1)
+zoom = Vector2(0.75, 0.75)
 script = ExtResource("3_50glp")
 
 [node name="smoothcam" type="Timer" parent="Camera2D"]
@@ -35,5 +36,26 @@ position = Vector2(662, 1424)
 [node name="StickyBlock" parent="." instance=ExtResource("5_v1gob")]
 position = Vector2(-5, 1443)
 
+[node name="gamet" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="text" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="time" type="Label" parent="text"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 75
+text = "Timer"
+
+[node name="Shield_block" parent="." instance=ExtResource("7_jw32o")]
+position = Vector2(1107, 1490)
+
 [connection signal="timeout" from="Camera2D/smoothcam" to="Camera2D" method="_on_smoothcam_timeout"]
 [connection signal="timeout" from="Camera2D/blockcd" to="Camera2D" method="_on_blockcd_timeout"]
+[connection signal="timeout" from="gamet" to="." method="_on_gamet_timeout"]

@@ -1,6 +1,6 @@
 extends Area2D
 var dragging = false
-@onready var slippery_block = $".."
+@onready var sticky_block = $".."
 var clickable = false
 var drag_offset = Vector2.ZERO
 
@@ -12,11 +12,11 @@ func _physics_process(delta):
 	if dragging:
 		# When dragging, set the velocity directly instead of position
 		var target_pos = get_global_mouse_position() + drag_offset
-		var current_pos = slippery_block.global_position
+		var current_pos = sticky_block.global_position
 		
 		# Option 1: For more stable physics when interacting with sticky blocks
-		slippery_block.linear_velocity = (target_pos - current_pos) / delta
-		slippery_block.sleeping = false  # Wake up the physics body
+		sticky_block.linear_velocity = (target_pos - current_pos) / delta
+		sticky_block.sleeping = false  # Wake up the physics body
 		
 		# Option 2: For direct positioning (may still cause some shaking with joints)
 		# tower_block.global_position = target_pos
@@ -29,7 +29,7 @@ func _input(event):
 	if Input.is_action_just_pressed("holdItem") and clickable:
 		dragging = true
 		# Store offset from mouse to block center to maintain grab point
-		drag_offset = slippery_block.global_position - get_global_mouse_position()
+		drag_offset = sticky_block.global_position - get_global_mouse_position()
 		
 		# If using Option 3, enable this:
 		# tower_block.freeze = true
