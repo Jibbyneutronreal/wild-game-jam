@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://h5gbo8gserqh"]
 
-[ext_resource type="Script" uid="uid://c31o1u2h7divp" path="res://Scripts/shield_block.gd" id="1_rh6uw"]
-[ext_resource type="Script" uid="uid://cl7p3ss2ydp12" path="res://Scripts/shield_mouse_detect.gd" id="1_y1rsv"]
+[ext_resource type="Script" uid="uid://baal4ehovd7rm" path="res://Scenes/shield_block.gd" id="1_rh6uw"]
+[ext_resource type="Script" uid="uid://dk8n1056prd3d" path="res://Scenes/shield_mouse_detect.gd" id="2_f05rc"]
 [ext_resource type="Texture2D" uid="uid://cpkiihtxdi1w4" path="res://Assets/icon.svg" id="2_rh6uw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f05rc"]
@@ -17,7 +17,7 @@ size = Vector2(132, 129)
 script = ExtResource("1_rh6uw")
 
 [node name="ShieldMouseDetect" type="Area2D" parent="."]
-script = ExtResource("1_y1rsv")
+script = ExtResource("2_f05rc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldMouseDetect"]
 position = Vector2(1, -1.5)
