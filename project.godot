@@ -90,6 +90,7 @@ spawnSlippery={
 2d/run_on_separate_thread=true
 common/physics_ticks_per_second=150
 common/physics_jitter_fix=2.0
+2d/physics_engine="GodotPhysics2D"
 2d/default_linear_damp=6.0
 2d/default_angular_damp=6.0
 2d/sleep_threshold_linear=1.988
