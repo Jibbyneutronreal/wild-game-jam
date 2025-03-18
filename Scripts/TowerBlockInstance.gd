@@ -1,20 +1,28 @@
 extends RigidBody2D
 
-var tower_block = preload("res://Scenes/Block.tscn")
-var last_block_y = 680
+var sticky_block = preload("res://Scenes/sticky_block.tscn")
+var last_block_y = 680  # Tracks the y position of the last spawned block
 var block_gap = 125
 var grav = 300
 var numberBlocks = 5
-var is_stuck = false
+
 
 func _ready():
-	# These properties are valid for RigidBody2D
-	contact_monitor = true
-	max_contacts_reported = 10
-
-func _process(delta):
-	if self.is_in_group("Sticked"):
-		grav = 0
-
+	pass
+func blockinstance():
+	if numberBlocks > 0:
+		var sticky_block_instance = sticky_block.instantiate()  
+		
+		# Add the block to the scene
+		get_tree().root.add_child(sticky_block_instance)
+		
+		# Update last block's Y position
+		numberBlocks -=1
+	
+func _process(_delta):
+	if numberBlocks < 0:
+		numberBlocks = 0
+		
 func _physics_process(delta):
-	position.y += grav * delta
+	position.y += grav*delta
+	

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://br5bo82r8ga5j"]
+
+[ext_resource type="Texture2D" uid="uid://cpkiihtxdi1w4" path="res://Assets/icon.svg" id="1_jb4vs"]
+[ext_resource type="Script" uid="uid://kwh5xwkk35am" path="res://Scripts/dragon.gd" id="1_mtyor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb4vs"]
+size = Vector2(670, 666)
+
+[node name="dragon" type="CharacterBody2D"]
+script = ExtResource("1_mtyor")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.876412, 0.0452364, 0.073138, 1)
+position = Vector2(-2, 2)
+scale = Vector2(5.17969, 5.17969)
+texture = ExtResource("1_jb4vs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 0)
+shape = SubResource("RectangleShape2D_jb4vs")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-383, -10)
+gizmo_extents = 761.0
