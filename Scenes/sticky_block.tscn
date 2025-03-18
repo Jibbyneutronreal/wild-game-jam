@@ -6,8 +6,7 @@
 [ext_resource type="Script" uid="uid://d0uruospmp2wt" path="res://Scripts/sticky.gd" id="4_xrn3a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xrn3a"]
-friction = 999.0
-rough = true
+friction = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgecv"]
 size = Vector2(128, 128)
@@ -16,7 +15,6 @@ size = Vector2(128, 128)
 size = Vector2(134, 132)
 
 [node name="StickyBlock" type="RigidBody2D"]
-mass = 1000.0
 physics_material_override = SubResource("PhysicsMaterial_xrn3a")
 script = ExtResource("1_uc33n")
 

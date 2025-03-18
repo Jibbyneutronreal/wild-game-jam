@@ -6,9 +6,12 @@ var drag_offset = Vector2.ZERO
 @onready var tower_block = $".."
 
 func _physics_process(delta):
-	if dragging:
-		# Smoothly update the block's position while dragging
-		tower_block.global_position = get_global_mouse_position() + drag_offset
+	if not tower_block.is_in_group("Sticked"):
+		if dragging:
+			# Smoothly update the block's position while dragging
+			tower_block.global_position = get_global_mouse_position() + drag_offset
+	else:
+		pass
 
 func _input(event):
 	if event.is_action_pressed("holdItem") and clickable:
