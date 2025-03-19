@@ -14,7 +14,7 @@
 script = ExtResource("1_v1gob")
 
 [node name="TowerBlock" parent="." instance=ExtResource("2_pbw6q")]
-position = Vector2(422, 1508)
+position = Vector2(251, 1060)
 
 [node name="map" type="Node" parent="."]
 
@@ -33,10 +33,10 @@ wait_time = 0.2
 position = Vector2(-45, 650)
 
 [node name="SlipperyBlock" parent="." instance=ExtResource("6_v1gob")]
-position = Vector2(662, 1424)
+position = Vector2(534, 965)
 
 [node name="StickyBlock" parent="." instance=ExtResource("5_v1gob")]
-position = Vector2(-5, 1443)
+position = Vector2(-105, 995)
 
 [node name="gamet" type="Timer" parent="."]
 wait_time = 4096.0
@@ -56,7 +56,7 @@ theme_override_font_sizes/font_size = 75
 text = "Timer"
 
 [node name="Shield_block" parent="." instance=ExtResource("7_jw32o")]
-position = Vector2(1107, 1490)
+position = Vector2(1024, 1059)
 
 [node name="dragon" parent="." groups=["Dragon"] instance=ExtResource("8_50glp")]
 position = Vector2(1392, 309)

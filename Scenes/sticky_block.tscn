@@ -9,7 +9,7 @@
 friction = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgecv"]
-size = Vector2(128, 128)
+size = Vector2(132, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sybj3"]
 size = Vector2(134, 132)
@@ -19,19 +19,19 @@ physics_material_override = SubResource("PhysicsMaterial_xrn3a")
 script = ExtResource("1_xrn3a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(107, 67)
+position = Vector2(108, 66)
 shape = SubResource("RectangleShape2D_jgecv")
 
 [node name="StickyBlockArea2D" type="Area2D" parent="."]
 script = ExtResource("2_uc33n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StickyBlockArea2D"]
-position = Vector2(107, 67)
+position = Vector2(108, 66)
 shape = SubResource("RectangleShape2D_jgecv")
 
 [node name="GreenGodot" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(107.25, 66.75)
+position = Vector2(108, 66)
 scale = Vector2(0.571111, 0.566667)
 texture = ExtResource("1_e1pwd")
 
@@ -39,7 +39,7 @@ texture = ExtResource("1_e1pwd")
 script = ExtResource("4_xrn3a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sticky_detection"]
-position = Vector2(107, 67)
+position = Vector2(108, 67)
 shape = SubResource("RectangleShape2D_sybj3")
 
 [connection signal="body_entered" from="." to="sticky_detection" method="_on_sticky_block_body_entered"]

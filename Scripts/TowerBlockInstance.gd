@@ -1,30 +1,17 @@
 extends RigidBody2D
 
-var sticky_block = preload("res://Scenes/sticky_block.tscn")
-var last_block_y = 680  # Tracks the y position of the last spawned block
+var last_block_y = 680
 var block_gap = 125
-var grav = 300
+var grav = 3
 var numberBlocks = 5
 
-
 func _ready():
-	pass
-func blockinstance():
-	if numberBlocks > 0:
-		var sticky_block_instance = sticky_block.instantiate()  
-		
-		# Add the block to the scene
-		get_tree().root.add_child(sticky_block_instance)
-		
-		# Update last block's Y position
-		numberBlocks -=1
-	
-func _process(_delta):
-	if numberBlocks < 0:
-		numberBlocks = 0
-		
+	gravity_scale = grav  # Set initial gravity
+
 func _physics_process(delta):
-	position.y += grav*delta
-	
-func _on_sticky_block_body_entered(body: Node) -> void:
-	grav = 0
+	if self.is_in_group("Sticked"):
+		gravity_scale = 0  # Disable gravity if in "Sticked" group
+	else:
+		gravity_scale = grav  # Enable gravity otherwise
+
+		
