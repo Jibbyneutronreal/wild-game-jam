@@ -12,10 +12,8 @@ func _ready():
 func blockinstance():
 	if numberBlocks > 0:
 		var sticky_block_instance = sticky_block.instantiate()  
-		
 		# Add the block to the scene
 		get_tree().root.add_child(sticky_block_instance)
-		
 		# Update last block's Y position
 		numberBlocks -=1
 	

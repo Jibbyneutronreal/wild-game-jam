@@ -62,7 +62,7 @@ position = Vector2(1107, 1490)
 position = Vector2(1392, 309)
 
 [node name="fireball" parent="." instance=ExtResource("9_vy5pj")]
-position = Vector2(-115, 350)
+position = Vector2(-101, 495)
 
 [connection signal="timeout" from="Camera2D/smoothcam" to="Camera2D" method="_on_smoothcam_timeout"]
 [connection signal="timeout" from="Camera2D/blockcd" to="Camera2D" method="_on_blockcd_timeout"]

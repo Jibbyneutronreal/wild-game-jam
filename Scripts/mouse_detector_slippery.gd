@@ -20,9 +20,7 @@ func _input(event):
 		dragging = false
 
 func _on_mouse_entered():
-	# Allow the block to be dragged when hovered
 	clickable = true
 
 func _on_mouse_exited():
-	# Prevent dragging when the mouse leaves the block
 	clickable = false

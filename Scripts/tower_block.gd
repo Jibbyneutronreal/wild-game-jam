@@ -8,7 +8,7 @@ var numberBlocks = 5
 var is_stuck = false
 
 func _ready():
-	# These properties are valid for RigidBody2D
+	self.add_to_group("blocks")
 	contact_monitor = true
 	max_contacts_reported = 10
 
