@@ -3,7 +3,7 @@ extends RigidBody2D
 var sticky_block = preload("res://Scenes/sticky_block.tscn")
 var last_block_y = 680  # Tracks the y position of the last spawned block
 var block_gap = 125
-var grav = 300
+var grav = 3
 var numberBlocks = 5
 @onready var sheild1 = $"."
 @onready var shield2 = $ShieldMouseDetect
@@ -28,7 +28,7 @@ func _process(_delta):
 		numberBlocks = 0
 		
 func _physics_process(delta):
-	position.y += grav*delta
+	gravity_scale = grav
 
 
 func _on_shield_killer_body_entered(body):
