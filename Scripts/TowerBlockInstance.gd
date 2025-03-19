@@ -26,3 +26,5 @@ func _process(_delta):
 func _physics_process(delta):
 	position.y += grav*delta
 	
+func _on_sticky_block_body_entered(body: Node) -> void:
+	grav = 0

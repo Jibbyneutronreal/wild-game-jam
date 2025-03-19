@@ -66,4 +66,5 @@ position = Vector2(-115, 350)
 
 [connection signal="timeout" from="Camera2D/smoothcam" to="Camera2D" method="_on_smoothcam_timeout"]
 [connection signal="timeout" from="Camera2D/blockcd" to="Camera2D" method="_on_blockcd_timeout"]
+[connection signal="body_entered" from="StickyBlock" to="TowerBlock" method="_on_sticky_block_body_entered"]
 [connection signal="timeout" from="gamet" to="." method="_on_gamet_timeout"]
