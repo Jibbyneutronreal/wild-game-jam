@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://h5gbo8gserqh"]
+[gd_scene load_steps=8 format=3 uid="uid://h5gbo8gserqh"]
 
-[ext_resource type="Script" uid="uid://baal4ehovd7rm" path="res://Scripts/shield_block.gd" id="1_rh6uw"]
-[ext_resource type="Script" uid="uid://dk8n1056prd3d" path="res://Scripts/shield_mouse_detect.gd" id="2_f05rc"]
-[ext_resource type="Texture2D" uid="uid://cpkiihtxdi1w4" path="res://Assets/icon.svg" id="2_rh6uw"]
+[ext_resource type="Script" uid="uid://baal4ehovd7rm" path="res://Scripts/shield_block.gd" id="1_7n7si"]
+[ext_resource type="Script" uid="uid://dk8n1056prd3d" path="res://Scripts/shield_mouse_detect.gd" id="2_3fbag"]
+[ext_resource type="Texture2D" uid="uid://blvre8jo1lcti" path="res://metalblock-removebg-preview.png" id="3_d1vfr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xitim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f05rc"]
 size = Vector2(124, 121)
@@ -11,13 +13,15 @@ size = Vector2(124, 121)
 size = Vector2(130, 121)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rh6uw"]
-size = Vector2(132, 129)
+size = Vector2(132, 123.5)
 
-[node name="Shield_block" type="RigidBody2D" groups=["shield"]]
-script = ExtResource("1_rh6uw")
+[node name="metal_block" type="RigidBody2D" groups=["shield"]]
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_xitim")
+script = ExtResource("1_7n7si")
 
 [node name="ShieldMouseDetect" type="Area2D" parent="."]
-script = ExtResource("2_f05rc")
+script = ExtResource("2_3fbag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldMouseDetect"]
 position = Vector2(1, -1.5)
@@ -27,14 +31,16 @@ shape = SubResource("RectangleShape2D_f05rc")
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_45o5a")
 
-[node name="Sheild" type="Sprite2D" parent="."]
-texture = ExtResource("2_rh6uw")
-
 [node name="shield_killer" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shield_killer"]
-position = Vector2(-1, -0.5)
+position = Vector2(0, -1.25)
 shape = SubResource("RectangleShape2D_rh6uw")
+
+[node name="Metalblock-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(0.500003, 4)
+scale = Vector2(0.587963, 0.549356)
+texture = ExtResource("3_d1vfr")
 
 [connection signal="mouse_entered" from="ShieldMouseDetect" to="ShieldMouseDetect" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ShieldMouseDetect" to="ShieldMouseDetect" method="_on_mouse_exited"]

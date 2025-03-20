@@ -12,5 +12,3 @@ func _ready():
 
 func _physics_process(delta):
 	gravity_scale = grav
-
-	

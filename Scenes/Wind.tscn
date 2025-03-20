@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl5cm37sksxlu"]
+
+[ext_resource type="Texture2D" uid="uid://dls5t8dollvuk" path="res://Assets/blue-wind-swirls-for-wind-movement-and-airflow-removebg-preview.png" id="1_mq10k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15g4v"]
+size = Vector2(285.5, 140)
+
+[node name="Wind" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(226.25, 57)
+shape = SubResource("RectangleShape2D_15g4v")
+
+[node name="wind_art" type="Sprite2D" parent="."]
+position = Vector2(222.75, 57.75)
+scale = Vector2(0.462109, 0.317518)
+texture = ExtResource("1_mq10k")

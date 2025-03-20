@@ -1,16 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://uebd1t3fbc4o"]
 
-[ext_resource type="Texture2D" uid="uid://cdlxgdi6sre7x" path="res://Assets/bluesquare.png" id="1_ap2dk"]
 [ext_resource type="Script" uid="uid://cacabs2vfv2ok" path="res://Scripts/slippery_block.gd" id="1_ty11x"]
 [ext_resource type="Script" uid="uid://cnv8fioillexo" path="res://Scripts/mouse_detector_slippery.gd" id="2_235df"]
+[ext_resource type="Texture2D" uid="uid://clv6e3aramhn2" path="res://Assets/iceblock.png" id="3_235df"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_235df"]
 friction = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_awlhx"]
-size = Vector2(128, 130)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuego"]
+size = Vector2(132, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awlhx"]
 size = Vector2(128, 130)
 
 [node name="SlipperyBlock" type="RigidBody2D"]
@@ -23,16 +23,17 @@ script = ExtResource("2_235df")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlipperyBlockArea2D"]
 position = Vector2(135, 92)
-shape = SubResource("RectangleShape2D_awlhx")
+shape = SubResource("RectangleShape2D_nuego")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(135, 92)
-shape = SubResource("RectangleShape2D_nuego")
+shape = SubResource("RectangleShape2D_awlhx")
 
-[node name="Bluesquare" type="Sprite2D" parent="."]
+[node name="Iceblock" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(135, 92)
-scale = Vector2(0.57, 0.578889)
-texture = ExtResource("1_ap2dk")
+scale = Vector2(0.790124, 0.83871)
+texture = ExtResource("3_235df")
 
 [connection signal="mouse_entered" from="SlipperyBlockArea2D" to="SlipperyBlockArea2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SlipperyBlockArea2D" to="SlipperyBlockArea2D" method="_on_mouse_exited"]

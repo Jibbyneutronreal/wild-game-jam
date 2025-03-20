@@ -24,7 +24,8 @@ g="*res://Scripts/Global.gd"
 folder_colors={
 "res://Assets/": "red",
 "res://Scenes/": "blue",
-"res://Scripts/": "purple"
+"res://Scripts/": "purple",
+"res://addons/": "orange"
 }
 
 [input]

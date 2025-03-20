@@ -3,7 +3,7 @@ extends Node2D
 @onready var block = preload("res://Scenes/Block.tscn")
 @onready var sticky_block = preload("res://Scenes/sticky_block.tscn")
 @onready var slippery_block = preload("res://Scenes/Slippery_block.tscn")
-@onready var shield_block = preload("res://Scenes/shield_block.tscn")
+@onready var metal_block = preload("res://Scenes/metal_block.tscn")
 @onready var gamet = $gamet
 @onready var time = $text/time
 
@@ -30,11 +30,11 @@ func spawn_slippery():
 	slippery_scene.position.x = randf_range(100, 1152)
 	add_child(slippery_scene)
 
-func spawn_shield():
+func spawn_metal():
 	# Spawn a shield block
-	var shield_scene = shield_block.instantiate()
-	shield_scene.position.x = randf_range(100, 1152)
-	add_child(shield_scene)
+	var metal_scene = metal_block.instantiate()
+	metal_scene.position.x = randf_range(100, 1152)
+	add_child(metal_scene)
 
 func _physics_process(delta):
 	# Handle block spawning based on input actions
@@ -43,7 +43,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("spawnSticky"):
 		spawn_sticky()
 	if Input.is_action_just_pressed("spawnShield"):
-		spawn_shield()
+		spawn_metal()
 	if Input.is_action_just_pressed("spawnSlippery"):
 		spawn_slippery()
 
