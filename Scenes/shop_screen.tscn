@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7kk1qh5cguk7"]
+
+[ext_resource type="Script" uid="uid://b823k2awlncs0" path="res://Scripts/shop_screen.gd" id="1_aclal"]
+
+[node name="shop_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aclal")
+
+[node name="shop" type="Label" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 109.0
+offset_right = 860.0
+offset_bottom = 382.0
+theme_override_font_sizes/font_size = 200
+text = "Shop:"
+
+[node name="BackToEnd" type="Button" parent="."]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 100
+text = "Back"
+
+[node name="coinUpgrade" type="Button" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 427.0
+offset_right = 1070.0
+offset_bottom = 538.0
+theme_override_font_sizes/font_size = 50
+text = "Coin Upgrade(Adds 10 coins per round)"
+
+[connection signal="pressed" from="BackToEnd" to="." method="_on_back_to_end_pressed"]
+[connection signal="pressed" from="coinUpgrade" to="." method="_on_coin_upgrade_pressed"]

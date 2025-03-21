@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh3wckovkkryy"]
+
+[ext_resource type="Script" uid="uid://bcnlqid1v55x4" path="res://Scripts/end_screen.gd" id="1_f2mtv"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f2mtv")
+
+[node name="youLost" type="Label" parent="."]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 61.0
+offset_right = 985.0
+offset_bottom = 266.0
+theme_override_font_sizes/font_size = 150
+text = "Game Over"
+
+[node name="playagain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 327.0
+offset_right = 573.0
+offset_bottom = 472.0
+theme_override_font_sizes/font_size = 100
+text = "Play Again"
+
+[node name="shop" type="Button" parent="."]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 332.0
+offset_right = 1137.0
+offset_bottom = 477.0
+theme_override_font_sizes/font_size = 100
+text = "Shop"
+
+[connection signal="pressed" from="playagain" to="." method="_on_playagain_pressed"]
