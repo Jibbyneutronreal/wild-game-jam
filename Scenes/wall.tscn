@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://xrwdk06nxo0d"]
 
-[ext_resource type="Texture2D" uid="uid://cpkiihtxdi1w4" path="res://Assets/icon.svg" id="1_xxgf6"]
+[ext_resource type="Texture2D" uid="uid://6il6t15ge6qc" path="res://Assets/image-removebg-preview.png" id="1_d155t"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xxgf6"]
 rough = true
@@ -13,10 +13,10 @@ size = Vector2(1324, 31)
 physics_material_override = SubResource("PhysicsMaterial_xxgf6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(599, 0.5)
-scale = Vector2(10.3281, 0.242188)
-texture = ExtResource("1_xxgf6")
+position = Vector2(599, 20.9941)
+scale = Vector2(10.3281, 1.65558)
+texture = ExtResource("1_d155t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(596, 0.5)
+position = Vector2(617, 32)
 shape = SubResource("RectangleShape2D_y4f30")
