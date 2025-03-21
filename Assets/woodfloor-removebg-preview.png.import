@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blvre8jo1lcti"
-path="res://.godot/imported/metalblock-removebg-preview.png-48e6adb08c1f7d924c549ed9ca87279d.ctex"
+uid="uid://cdndn4bwnm0e2"
+path="res://.godot/imported/woodfloor-removebg-preview.png-37a20dfdfe89047a2ce508e9b88f5a71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://metalblock-removebg-preview.png"
-dest_files=["res://.godot/imported/metalblock-removebg-preview.png-48e6adb08c1f7d924c549ed9ca87279d.ctex"]
+source_file="res://Assets/woodfloor-removebg-preview.png"
+dest_files=["res://.godot/imported/woodfloor-removebg-preview.png-37a20dfdfe89047a2ce508e9b88f5a71.ctex"]
 
 [params]
 

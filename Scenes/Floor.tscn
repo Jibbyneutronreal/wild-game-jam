@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://xrwdk06nxo0d"]
 
-[ext_resource type="Texture2D" uid="uid://cpkiihtxdi1w4" path="res://Assets/icon.svg" id="1_xxgf6"]
+[ext_resource type="Texture2D" uid="uid://cdndn4bwnm0e2" path="res://Assets/woodfloor-removebg-preview.png" id="1_4xl7o"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xxgf6"]
 rough = true
@@ -12,11 +12,11 @@ size = Vector2(1324, 31)
 [node name="StaticBody2D" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_xxgf6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(599, 0.5)
-scale = Vector2(10.3281, 0.242188)
-texture = ExtResource("1_xxgf6")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(596, 0.5)
 shape = SubResource("RectangleShape2D_y4f30")
+
+[node name="Woodfloor-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(606.75, -1)
+scale = Vector2(7.58939, 1)
+texture = ExtResource("1_4xl7o")
