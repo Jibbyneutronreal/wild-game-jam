@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bo2duiqjuith7"]
+[gd_scene load_steps=6 format=3 uid="uid://bo2duiqjuith7"]
 
 [ext_resource type="Script" uid="uid://bat61dy451a4g" path="res://Scripts/sticky_block_instance.gd" id="1_xrn3a"]
 [ext_resource type="Script" uid="uid://dku6tiubb0hit" path="res://Scripts/mouse_detector_sticky.gd" id="2_uc33n"]
 [ext_resource type="Texture2D" uid="uid://bwbwal1g0ap6v" path="res://Assets/Screenshot 2025-03-19 225034.png" id="4_w8pch"]
-[ext_resource type="Script" uid="uid://d0uruospmp2wt" path="res://Scripts/sticky.gd" id="4_xrn3a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xrn3a"]
 friction = 5.0
@@ -11,10 +10,7 @@ friction = 5.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgecv"]
 size = Vector2(131, 130)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sybj3"]
-size = Vector2(134, 130)
-
-[node name="StickyBlock" type="RigidBody2D"]
+[node name="StickyBlock" type="RigidBody2D" groups=["stickyBlock"]]
 mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_xrn3a")
 script = ExtResource("1_xrn3a")
@@ -30,20 +26,11 @@ script = ExtResource("2_uc33n")
 position = Vector2(108, 66.5)
 shape = SubResource("RectangleShape2D_jgecv")
 
-[node name="sticky_detection" type="Area2D" parent="."]
-script = ExtResource("4_xrn3a")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sticky_detection"]
-position = Vector2(108, 66)
-shape = SubResource("RectangleShape2D_sybj3")
-
 [node name="Screenshot2025-03-19225034" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(107.75, 66.25)
 scale = Vector2(2.17797, 2.17797)
 texture = ExtResource("4_w8pch")
 
-[connection signal="body_entered" from="." to="sticky_detection" method="_on_sticky_block_body_entered"]
 [connection signal="mouse_entered" from="StickyBlockArea2D" to="StickyBlockArea2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StickyBlockArea2D" to="StickyBlockArea2D" method="_on_mouse_exited"]
-[connection signal="body_entered" from="sticky_detection" to="sticky_detection" method="_on_body_entered"]

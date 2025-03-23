@@ -33,7 +33,7 @@ position = Vector2(3351, 89)
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(568, 320)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.1, 0.1)
 script = ExtResource("3_50glp")
 
 [node name="smoothcam" type="Timer" parent="Camera2D"]
@@ -118,6 +118,7 @@ script = ExtResource("12_grg3l")
 
 [node name="Gotoshop" type="Button" parent="Buttons"]
 z_index = 1
+layout_mode = 0
 offset_left = -531.0
 offset_top = 637.0
 offset_right = -235.0
