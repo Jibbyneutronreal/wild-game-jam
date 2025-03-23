@@ -15,6 +15,7 @@ size = Vector2(131, 130)
 size = Vector2(134, 130)
 
 [node name="StickyBlock" type="RigidBody2D"]
+mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_xrn3a")
 script = ExtResource("1_xrn3a")
 

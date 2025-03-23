@@ -14,7 +14,7 @@ size = Vector2(132, 134)
 size = Vector2(128, 130)
 
 [node name="SlipperyBlock" type="RigidBody2D"]
-mass = 0.5
+mass = 2.5
 physics_material_override = SubResource("PhysicsMaterial_235df")
 script = ExtResource("1_ty11x")
 

@@ -1,17 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl5cm37sksxlu"]
+[gd_scene load_steps=4 format=3 uid="uid://dl5cm37sksxlu"]
 
+[ext_resource type="Script" uid="uid://bdrjfpllhlkyq" path="res://Scripts/wind.gd" id="1_d85b2"]
 [ext_resource type="Texture2D" uid="uid://dls5t8dollvuk" path="res://Assets/blue-wind-swirls-for-wind-movement-and-airflow-removebg-preview.png" id="1_mq10k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15g4v"]
-size = Vector2(285.5, 140)
+size = Vector2(285.5, 161)
 
 [node name="Wind" type="Area2D"]
+script = ExtResource("1_d85b2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(226.25, 57)
+position = Vector2(226.25, 67.5)
 shape = SubResource("RectangleShape2D_15g4v")
 
 [node name="wind_art" type="Sprite2D" parent="."]
-position = Vector2(222.75, 57.75)
-scale = Vector2(0.462109, 0.317518)
+position = Vector2(223.25, 69.75)
+scale = Vector2(0.463756, 0.375912)
 texture = ExtResource("1_mq10k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

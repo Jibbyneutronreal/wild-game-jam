@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://0nm066wac1m4"]
+[gd_scene load_steps=7 format=3 uid="uid://0nm066wac1m4"]
 
 [ext_resource type="Script" uid="uid://1xet76886mnb" path="res://Scripts/TowerBlockInstance.gd" id="1_ujcp4"]
 [ext_resource type="Texture2D" uid="uid://sra0xn1xbl8l" path="res://Assets/Screenshot 2025-03-15 155808.png" id="2_ujcp4"]
 [ext_resource type="Script" uid="uid://dc4v3pqeaxk4m" path="res://Scripts/mouse_detector.gd" id="3_kcwjl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ujcp4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab6iy"]
 size = Vector2(128, 126)
@@ -11,6 +13,8 @@ size = Vector2(128, 126)
 size = Vector2(128.5, 128)
 
 [node name="TowerBlock" type="RigidBody2D" groups=["blocks"]]
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_ujcp4")
 script = ExtResource("1_ujcp4")
 
 [node name="Icon" type="Sprite2D" parent="."]

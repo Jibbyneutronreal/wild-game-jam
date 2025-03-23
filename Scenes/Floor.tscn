@@ -7,7 +7,7 @@ rough = true
 absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4f30"]
-size = Vector2(1324, 31)
+size = Vector2(1739, 31)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_xxgf6")
@@ -18,5 +18,5 @@ scale = Vector2(10.3281, 1.65558)
 texture = ExtResource("1_d155t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(617, 32)
+position = Vector2(589.5, 32)
 shape = SubResource("RectangleShape2D_y4f30")
