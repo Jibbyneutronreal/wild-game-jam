@@ -13,53 +13,26 @@ extends Node2D
 
 func _ready():
 	g.coins = g.starting_coins
-func spawn_switch():
-	if g.coins >= 20:
-		var switch_scene = switch_block.instantiate()
-		switch_scene.position.x = randf_range(100, 1152)
-		add_child(switch_scene)
-func spawn_block():
-	if g.coins >= 10:
-		# Spawn a standard or slippery block based on a random chance
-		var random_number = randi() % 10 + 1
-		print("Random number: ", random_number)
-		if random_number >= 2:
-			spawn_slippery()
-		else:
-			var block_scene = block.instantiate()
-			block_scene.position.x = randf_range(100, 1152)
-			add_child(block_scene)
-		g.coins -= 10
+	g.wave = 1
 
-func spawn_sticky():
-	if g.coins >= 20:
-		# Spawn a sticky block
-		var sticky_scene = sticky_block.instantiate()
-		sticky_scene.position.x = randf_range(100, 1152)
-		add_child(sticky_scene)
-	g.coins -= 20
 
-func spawn_slippery():
-	# Spawn a slippery block
-	var slippery_scene = slippery_block.instantiate()
-	slippery_scene.position.x = randf_range(100, 1152)
-	add_child(slippery_scene)
 
-func spawn_metal():
-	if g.coins >= 20:
-		# Spawn a shield block
-		var metal_scene = metal_block.instantiate()
-		metal_scene.position.x = randf_range(100, 1152)
-		add_child(metal_scene)
-		g.coins -= 20
-		
+func _process(delta: float) -> void:
+	coins.text = "Coins: " + str(g.coins) 
+	waves.text = "Wave " + str(g.wave)
+	time.text = str(int(gamet.time_left))
+	if g.coins <= 0:
+		g.coins = 0
+
+
+
+
 func spawn_right_wind():
 	var wind_scene = wind.instantiate()
 	wind_scene.position.y = randf_range(-178, 811)
 	wind_scene.position.x = 1353
 	wind_scene.direction = -1  # Set initial direction
 	add_child(wind_scene)
-
 
 func spawn_left_wind():
 	var wind_scene = wind.instantiate()
@@ -68,25 +41,51 @@ func spawn_left_wind():
 	wind_scene.direction = 1
 	add_child(wind_scene)
 
-func _physics_process(delta):
-	coins.text = "Coins: " + str(g.coins) 
-	waves.text = "Wave " + str(g.wave)
-	# Handle block spawning based on input actions
-	if Input.is_action_just_pressed("spawnBlock"):
-		spawn_block()
-	if Input.is_action_just_pressed("spawnShield"):
-		spawn_metal()
-	if Input.is_action_just_pressed("spawnSwitch"):
-		spawn_switch()
-	if Input.is_action_just_pressed("rightWind"):
-		spawn_right_wind()
-	if Input.is_action_just_pressed("leftWind"):
-		spawn_left_wind()
-	# Update the text to display the time remaining
-	time.text = str(int(gamet.time_left))
-	if g.coins <= 0:
-		g.coins = 0
+func spawn_5leftwinds():
+	spawn_left_wind()
+	spawn_left_wind()
+	spawn_left_wind()
+	spawn_left_wind()
+	spawn_left_wind()
 
-func _on_gamet_timeout():
-	get_tree().reload_current_scene()
+func _on_block_pressed() -> void:
+	if g.coins >= 20:
+		var random_number = randi() % 10 + 1
+		print("Random number: ", random_number)
+		g.coins -= 20
+		if random_number >= 9:
+			spawn_slippery()
+		else:
+			var block_scene = block.instantiate()
+			block_scene.position.x = randf_range(100, 1152)
+			add_child(block_scene)
+
+func _on_shield_pressed() -> void:
+	if g.coins >= 50:
+		var shield_scene = metal_block.instantiate()
+		shield_scene.position.x = randf_range(100, 1152)
+		add_child(shield_scene)
+		g.coins -= 50
+
+func _on_switcher_pressed() -> void:
+	if g.coins >= 200:
+		var switch_scene = switch_block.instantiate()
+		switch_scene.position.x = randf_range(100, 1152)
+		add_child(switch_scene)
+		g.coins -= 200
+
+func startwave():
+	var amountwinds = g.wave 
+	for i in range(amountwinds):
+		spawn_5leftwinds()
+
+func spawn_slippery():
+	var slippery_scene = slippery_block.instantiate()
+	slippery_scene.position.x = randf_range(100, 1152)
+	add_child(slippery_scene)
+
+func _on_gamet_timeout() -> void:
+	startwave()
+	g.coins += 100 + g.wave/2
+	g.wave += 1 
 	
