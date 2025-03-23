@@ -8,7 +8,7 @@ extends Node2D
 @onready var gamet = $gamet
 @onready var time = $text/time
 @onready var coins = $text/coins
-
+@onready var waves = $text/waves
 
 func _ready():
 	g.coins = g.starting_coins
@@ -66,6 +66,7 @@ func spawn_left_wind():
 
 func _physics_process(delta):
 	coins.text = "Coins: " + str(g.coins) 
+	waves.text = "Wave " + str(g.wave)
 	# Handle block spawning based on input actions
 	if Input.is_action_just_pressed("spawnBlock"):
 		spawn_block()

@@ -1,9 +1,6 @@
 extends RigidBody2D
 
-var last_block_y = 680
-var block_gap = 125
 var grav = 3
-var numberBlocks = 5
 
 func _ready():
 	# These properties are valid for RigidBody2D

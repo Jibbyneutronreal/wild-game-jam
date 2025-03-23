@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgojsisc7o4ml"]
+[gd_scene load_steps=14 format=3 uid="uid://cgojsisc7o4ml"]
 
 [ext_resource type="Script" uid="uid://doogj2pukfuwa" path="res://Scripts/main.gd" id="1_v1gob"]
+[ext_resource type="PackedScene" uid="uid://becsc8wgb7uha" path="res://Scenes/sky.tscn" id="2_4kpch"]
 [ext_resource type="PackedScene" uid="uid://0nm066wac1m4" path="res://Scenes/Block.tscn" id="2_pbw6q"]
 [ext_resource type="Script" uid="uid://bmo7bd8rgi47e" path="res://Scripts/camera_2d.gd" id="3_50glp"]
 [ext_resource type="PackedScene" uid="uid://xrwdk06nxo0d" path="res://Scenes/Floor.tscn" id="4_vy5pj"]
@@ -10,9 +11,18 @@
 [ext_resource type="PackedScene" uid="uid://br5bo82r8ga5j" path="res://Scenes/dragon.tscn" id="8_50glp"]
 [ext_resource type="PackedScene" uid="uid://dsucvwstyyu6h" path="res://Scenes/fireball.tscn" id="9_vy5pj"]
 [ext_resource type="PackedScene" uid="uid://dl5cm37sksxlu" path="res://Scenes/Wind.tscn" id="10_bmxlf"]
+[ext_resource type="Script" uid="uid://rkiyylidxyal" path="res://Scenes/buttons.gd" id="12_grg3l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bmxlf"]
+font_size = 64
 
 [node name="Main Scene" type="Node2D"]
 script = ExtResource("1_v1gob")
+
+[node name="Sky" parent="." instance=ExtResource("2_4kpch")]
+z_index = -1
+position = Vector2(564, 317)
+scale = Vector2(8.5963, 8.96622)
 
 [node name="TowerBlock" parent="." instance=ExtResource("2_pbw6q")]
 top_level = true
@@ -75,19 +85,45 @@ theme_override_font_sizes/font_size = 75
 text = "Coins:
 "
 
+[node name="waves" type="Label" parent="text"]
+layout_mode = 0
+offset_left = 1217.0
+offset_top = -254.0
+offset_right = 1403.0
+offset_bottom = -166.0
+text = "Wave:"
+label_settings = SubResource("LabelSettings_bmxlf")
+
 [node name="Shield_block" parent="." groups=["blocks"] instance=ExtResource("7_jw32o")]
 position = Vector2(3816, 106)
 
 [node name="dragon" parent="." groups=["Dragon"] instance=ExtResource("8_50glp")]
-position = Vector2(1823, 407)
+position = Vector2(2859, 524)
 
 [node name="fireball" parent="." instance=ExtResource("9_vy5pj")]
 top_level = true
-position = Vector2(1261, 358)
+position = Vector2(1787, 1707)
 
 [node name="Wind" parent="." instance=ExtResource("10_bmxlf")]
 top_level = true
-position = Vector2(2210, 1140)
+position = Vector2(2415, 1490)
+
+[node name="Buttons" type="Control" parent="."]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_grg3l")
+
+[node name="Gotoshop" type="Button" parent="Buttons"]
+z_index = 1
+offset_left = -531.0
+offset_top = 637.0
+offset_right = -235.0
+offset_bottom = 842.0
+theme_override_font_sizes/font_size = 64
+text = "Shop"
 
 [connection signal="timeout" from="Camera2D/smoothcam" to="Camera2D" method="_on_smoothcam_timeout"]
 [connection signal="timeout" from="Camera2D/blockcd" to="Camera2D" method="_on_blockcd_timeout"]
