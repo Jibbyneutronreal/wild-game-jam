@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var shield_block = $"../Shield_block"
 
 func _physics_process(delta):
-	velocity.x = -2000  # Move left at 50 pixels per second
+	velocity.x = -500  # Move left at 50 pixels per second
 	move_and_slide()
 #
 func _on_area_2d_body_entered(body):
