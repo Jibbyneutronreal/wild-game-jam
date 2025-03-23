@@ -5,6 +5,8 @@ var block_gap = 125
 var grav = 3
 var numberBlocks = 5
 
+func _ready():
+	pass
 
 
 func _physics_process(delta):

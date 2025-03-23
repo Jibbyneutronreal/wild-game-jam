@@ -5,21 +5,26 @@ extends Node2D
 @onready var slippery_block = preload("res://Scenes/Slippery_block.tscn")
 @onready var metal_block = preload("res://Scenes/metal_block.tscn")
 @onready var wind = preload("res://Scenes/Wind.tscn")
+@onready var switch_block = preload("res://Scenes/switch_block.tscn")
 @onready var gamet = $gamet
 @onready var time = $text/time
 @onready var coins = $text/coins
 @onready var waves = $text/waves
-
 func _ready():
 	g.coins = g.starting_coins
 
 
+func spawn_switch():
+	if g.coins >= 20:
+		var switch_scene = switch_block.instantiate()
+		switch_scene.position.x = randf_range(100, 1152)
+		add_child(switch_scene)
 func spawn_block():
 	if g.coins >= 10:
 		# Spawn a standard or slippery block based on a random chance
 		var random_number = randi() % 10 + 1
 		print("Random number: ", random_number)
-		if random_number >= 8:
+		if random_number >= 2:
 			spawn_slippery()
 		else:
 			var block_scene = block.instantiate()
@@ -74,6 +79,8 @@ func _physics_process(delta):
 		spawn_sticky()
 	if Input.is_action_just_pressed("spawnShield"):
 		spawn_metal()
+	if Input.is_action_just_pressed("spawnSwitch"):
+		spawn_switch()
 	if Input.is_action_just_pressed("rightWind"):
 		spawn_right_wind()
 	if Input.is_action_just_pressed("leftWind"):

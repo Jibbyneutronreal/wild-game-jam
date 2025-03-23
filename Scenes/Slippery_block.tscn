@@ -13,7 +13,7 @@ size = Vector2(132, 134)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awlhx"]
 size = Vector2(128, 130)
 
-[node name="SlipperyBlock" type="RigidBody2D" groups=["blocks"]]
+[node name="SlipperyBlock" type="RigidBody2D" groups=["blocks", "slippery"]]
 mass = 2.5
 physics_material_override = SubResource("PhysicsMaterial_235df")
 script = ExtResource("1_ty11x")

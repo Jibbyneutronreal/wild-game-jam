@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://brgb4sx28oyo5"]
+
+[ext_resource type="Script" uid="uid://c60qqdv4jvnqu" path="res://Scripts/switch_block.gd" id="1_8iemm"]
+[ext_resource type="Texture2D" uid="uid://dx0vdanu8kffk" path="res://Assets/Screenshot 2025-03-23 111327.png" id="1_lrb1a"]
+[ext_resource type="Script" uid="uid://ckycgkhsv5i3p" path="res://Scripts/switch_mouse_detect.gd" id="3_u0uiq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asenr"]
+size = Vector2(133, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrb1a"]
+size = Vector2(142, 136)
+
+[node name="switch_block" type="RigidBody2D"]
+script = ExtResource("1_8iemm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_asenr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lrb1a")
+
+[node name="switch_mouse_detect" type="Area2D" parent="."]
+script = ExtResource("3_u0uiq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="switch_mouse_detect"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_lrb1a")
+
+[connection signal="body_entered" from="switch_mouse_detect" to="." method="_on_switch_mouse_detect_body_entered"]

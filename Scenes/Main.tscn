@@ -33,7 +33,7 @@ position = Vector2(3351, 89)
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(568, 320)
-zoom = Vector2(0.1, 0.1)
+zoom = Vector2(0.5, 0.5)
 script = ExtResource("3_50glp")
 
 [node name="smoothcam" type="Timer" parent="Camera2D"]
@@ -44,7 +44,7 @@ wait_time = 0.2
 [node name="StaticBody2D" parent="." instance=ExtResource("4_vy5pj")]
 position = Vector2(-34, 867)
 
-[node name="SlipperyBlock" parent="." groups=["blocks"] instance=ExtResource("6_v1gob")]
+[node name="SlipperyBlock" parent="." instance=ExtResource("6_v1gob")]
 top_level = true
 position = Vector2(3368, -1)
 
