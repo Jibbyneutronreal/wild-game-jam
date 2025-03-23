@@ -30,3 +30,14 @@ extends Camera2D
 	#
 ##func _on_blockcd_timeout():
 	##camsmoothnum = 10
+
+
+func _on_gotoshop_pressed() -> void:
+	self.zoom = Vector2(0.6, 0.6)
+	self.global_position = Vector2(6300, -6770)
+	
+
+
+func _on_backtomain_pressed() -> void:
+	self.zoom = Vector2(0.5, 0.5)
+	self.global_position = Vector2(568, 320)

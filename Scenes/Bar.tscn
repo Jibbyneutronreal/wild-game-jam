@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkgrhddwyxkn4"]
+
+[ext_resource type="Texture2D" uid="uid://6il6t15ge6qc" path="res://Assets/image-removebg-preview.png" id="1_op7jc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vt6c"]
+size = Vector2(2457.5, 417)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1230.25, -33.5)
+shape = SubResource("RectangleShape2D_2vt6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1230, 184.75)
+scale = Vector2(7.92903, 0.837423)
+texture = ExtResource("1_op7jc")

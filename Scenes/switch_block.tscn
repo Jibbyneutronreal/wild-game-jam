@@ -28,3 +28,5 @@ position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_lrb1a")
 
 [connection signal="body_entered" from="switch_mouse_detect" to="." method="_on_switch_mouse_detect_body_entered"]
+[connection signal="mouse_entered" from="switch_mouse_detect" to="switch_mouse_detect" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="switch_mouse_detect" to="switch_mouse_detect" method="_on_mouse_exited"]

@@ -10,10 +10,9 @@ extends Node2D
 @onready var time = $text/time
 @onready var coins = $text/coins
 @onready var waves = $text/waves
+
 func _ready():
 	g.coins = g.starting_coins
-
-
 func spawn_switch():
 	if g.coins >= 20:
 		var switch_scene = switch_block.instantiate()
@@ -75,8 +74,6 @@ func _physics_process(delta):
 	# Handle block spawning based on input actions
 	if Input.is_action_just_pressed("spawnBlock"):
 		spawn_block()
-	if Input.is_action_just_pressed("spawnSticky"):
-		spawn_sticky()
 	if Input.is_action_just_pressed("spawnShield"):
 		spawn_metal()
 	if Input.is_action_just_pressed("spawnSwitch"):
