@@ -7,10 +7,10 @@ var direction = -1  # Start moving leftward (-1 for left, 1 for right)
 @onready var sprite = $wind_art
 
 func right_wind(body):
-	body.apply_force(rightward_wind, Vector2.ZERO)
+	body.apply_force(rightward_wind * g.powerscale, Vector2.ZERO)
 
 func left_wind(body):
-	body.apply_force(leftward_wind, Vector2.ZERO)
+	body.apply_force(leftward_wind * g.powerscale, Vector2.ZERO)
 
 func _on_body_entered(body):
 	if body is RigidBody2D:

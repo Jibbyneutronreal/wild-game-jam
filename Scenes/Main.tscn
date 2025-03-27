@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cgojsisc7o4ml"]
+[gd_scene load_steps=20 format=3 uid="uid://cgojsisc7o4ml"]
 
 [ext_resource type="Script" uid="uid://doogj2pukfuwa" path="res://Scripts/main.gd" id="1_v1gob"]
 [ext_resource type="PackedScene" uid="uid://becsc8wgb7uha" path="res://Scenes/sky.tscn" id="2_4kpch"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://uebd1t3fbc4o" path="res://Scenes/Slippery_block.tscn" id="6_v1gob"]
 [ext_resource type="PackedScene" uid="uid://h5gbo8gserqh" path="res://Scenes/metal_block.tscn" id="7_jw32o"]
 [ext_resource type="PackedScene" uid="uid://br5bo82r8ga5j" path="res://Scenes/dragon.tscn" id="8_50glp"]
+[ext_resource type="Script" uid="uid://bnelvu2jfcdxp" path="res://Scripts/text.gd" id="8_erwvk"]
 [ext_resource type="PackedScene" uid="uid://dsucvwstyyu6h" path="res://Scenes/fireball.tscn" id="9_vy5pj"]
 [ext_resource type="PackedScene" uid="uid://dl5cm37sksxlu" path="res://Scenes/Wind.tscn" id="10_bmxlf"]
 [ext_resource type="Script" uid="uid://rkiyylidxyal" path="res://Scripts/buttons.gd" id="12_grg3l"]
@@ -20,6 +21,9 @@
 blend_mode = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_bmxlf"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_2w5on"]
 font_size = 64
 
 [node name="Main Scene" type="Node2D"]
@@ -55,10 +59,10 @@ position = Vector2(3567, 242)
 
 [node name="StickyBlock" parent="." groups=["blocks"] instance=ExtResource("5_v1gob")]
 top_level = true
-position = Vector2(3199, 242)
+position = Vector2(3238, 241)
 
 [node name="gamet" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 10.0
 autostart = true
 
 [node name="text" type="Control" parent="."]
@@ -66,6 +70,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("8_erwvk")
 
 [node name="time" type="Label" parent="text"]
 layout_mode = 0
@@ -98,6 +103,16 @@ offset_right = 1403.0
 offset_bottom = -166.0
 text = "Wave:"
 label_settings = SubResource("LabelSettings_bmxlf")
+
+[node name="passing_failing" type="Label" parent="text"]
+z_index = 2
+layout_mode = 0
+offset_left = 565.0
+offset_top = -183.0
+offset_right = 1098.0
+offset_bottom = 99.0
+text = "Passing"
+label_settings = SubResource("LabelSettings_2w5on")
 
 [node name="Shield_block" parent="." groups=["blocks"] instance=ExtResource("7_jw32o")]
 position = Vector2(4188, 334)
@@ -153,7 +168,6 @@ offset_bottom = 317.0
 text = "Switcher Block - 200 coins"
 
 [node name="Shield" parent="shop_screen" index="4"]
-layout_mode = 0
 offset_left = 389.0
 offset_top = 154.0
 offset_right = 738.0
@@ -161,7 +175,7 @@ offset_bottom = 313.0
 text = "Shield Block - 50 coins"
 
 [node name="Area2D" parent="." instance=ExtResource("15_h1m7h")]
-position = Vector2(-2062, 1841)
+position = Vector2(-678, 518)
 
 [node name="Timer" type="Timer" parent="."]
 

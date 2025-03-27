@@ -16,7 +16,6 @@ func _ready():
 	g.wave = 1
 
 
-
 func _process(delta: float) -> void:
 	coins.text = "Coins: " + str(g.coins) 
 	waves.text = "Wave " + str(g.wave)
@@ -77,7 +76,7 @@ func _on_switcher_pressed() -> void:
 func startwave():
 	var amountwinds = g.wave 
 	for i in range(amountwinds):
-		spawn_5leftwinds()
+		spawn_left_wind()
 
 func spawn_slippery():
 	var slippery_scene = slippery_block.instantiate()
@@ -88,4 +87,5 @@ func _on_gamet_timeout() -> void:
 	startwave()
 	g.coins += 100 + g.wave/2
 	g.wave += 1 
+	g.powerscale += 0.2
 	

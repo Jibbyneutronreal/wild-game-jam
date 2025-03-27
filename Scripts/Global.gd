@@ -7,3 +7,4 @@ var wave = 1
 var windamount = 5
 var camerazoom = 0.5
 var passcondition = false
+var powerscale = 0.5
